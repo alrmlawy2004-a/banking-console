@@ -14,15 +14,26 @@ public class Bank1 {
     private float amount;
     
     public void setInsert(int a ,String n ,float m){
+        if (!Float.isFinite(m) || m < 0) {
+            throw new IllegalArgumentException("Opening balance must be finite and non-negative.");
+        }
         this.accountno = a;
         this.amount = m;
         this.name = n;
     }
     public void setdeposit(float m){
-        this.amount = m +  this.amount;
+        if (!Float.isFinite(m) || m <= 0) {
+            System.out.println("Deposit must be a positive finite amount.");
+            return;
+        }
+        this.amount = m + this.amount;
         System.out.println(m);
     }
        public void setWithdraw(float m){
+           if (!Float.isFinite(m) || m <= 0) {
+               System.out.println("Withdrawal must be a positive finite amount.");
+               return;
+           }
            if(m > amount){
                System.out.println("هناك خطا ");
            }else{
