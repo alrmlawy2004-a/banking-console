@@ -10,14 +10,19 @@ Java 17 or later is required. From this directory:
 mvn compile exec:java
 ```
 
-Main class: `com.mycompany.bank.Bank`.
+Main class: `banking.Bank`.
 
 Without Maven, use PowerShell:
 
 ```powershell
 $sources = Get-ChildItem src/main/java -Recurse -Filter *.java
 javac -encoding UTF-8 -d out $sources.FullName
-java -cp out com.mycompany.bank.Bank
+java -cp out banking.Bank
 ```
 
 See the [collection documentation](../README.md) for the application's scope and limitations. Compilation has been checked with JDK 23; interactive workflows are not exhaustively tested.
+
+## Source code
+
+- [Bank.java](src/banking/Bank.java)
+- [Bank1.java](src/banking/Bank1.java)
